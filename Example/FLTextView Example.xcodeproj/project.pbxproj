@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F3BAE7B1AD64C2F00EE2835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3BAE7A1AD64C2F00EE2835 /* ViewController.swift */; };
+		9FEB17F21AD3CFAF00AB89A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEB17E81AD3CFAF00AB89A5 /* AppDelegate.swift */; };
+		9FEB17F51AD3CFAF00AB89A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FEB17ED1AD3CFAF00AB89A5 /* Main.storyboard */; };
+		9FEB17F61AD3CFAF00AB89A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FEB17EF1AD3CFAF00AB89A5 /* Images.xcassets */; };
+		9FEB17FC1AD3DCFA00AB89A5 /* FLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEB17F91AD3D6A900AB89A5 /* FLTextView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F3BAE7A1AD64C2F00EE2835 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F6299FE1AD3CDA5009CDDA3 /* FLTextView Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FLTextView Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FEB17E81AD3CFAF00AB89A5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FEB17EE1AD3CFAF00AB89A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FEB17EF1AD3CFAF00AB89A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9FEB17F11AD3CFAF00AB89A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FEB17F91AD3D6A900AB89A5 /* FLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLTextView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F6299FB1AD3CDA5009CDDA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F6299F51AD3CDA5009CDDA3 = {
+			isa = PBXGroup;
+			children = (
+				9FEB17F81AD3D10500AB89A5 /* FLTextView */,
+				9F629A001AD3CDA5009CDDA3 /* FLTextView Example */,
+				9F6299FF1AD3CDA5009CDDA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F6299FF1AD3CDA5009CDDA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F6299FE1AD3CDA5009CDDA3 /* FLTextView Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F629A001AD3CDA5009CDDA3 /* FLTextView Example */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB17E71AD3CFAF00AB89A5 /* Classes */,
+				9FEB17EA1AD3CFAF00AB89A5 /* Resources */,
+				9FEB17F01AD3CFAF00AB89A5 /* Supporting Files */,
+			);
+			path = "FLTextView Example";
+			sourceTree = "<group>";
+		};
+		9FEB17E71AD3CFAF00AB89A5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB17E81AD3CFAF00AB89A5 /* AppDelegate.swift */,
+				9F3BAE7A1AD64C2F00EE2835 /* ViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9FEB17EA1AD3CFAF00AB89A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB17ED1AD3CFAF00AB89A5 /* Main.storyboard */,
+				9FEB17EF1AD3CFAF00AB89A5 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9FEB17F01AD3CFAF00AB89A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB17F11AD3CFAF00AB89A5 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FEB17F81AD3D10500AB89A5 /* FLTextView */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB17F91AD3D6A900AB89A5 /* FLTextView.swift */,
+			);
+			name = FLTextView;
+			path = ../FLTextView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F6299FD1AD3CDA5009CDDA3 /* FLTextView Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F629A1D1AD3CDA5009CDDA3 /* Build configuration list for PBXNativeTarget "FLTextView Example" */;
+			buildPhases = (
+				9F6299FA1AD3CDA5009CDDA3 /* Sources */,
+				9F6299FB1AD3CDA5009CDDA3 /* Frameworks */,
+				9F6299FC1AD3CDA5009CDDA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FLTextView Example";
+			productName = "FLTextView Example";
+			productReference = 9F6299FE1AD3CDA5009CDDA3 /* FLTextView Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F6299F61AD3CDA5009CDDA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Freeletics GmbH";
+				TargetAttributes = {
+					9F6299FD1AD3CDA5009CDDA3 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = EQA9435SKP;
+					};
+				};
+			};
+			buildConfigurationList = 9F6299F91AD3CDA5009CDDA3 /* Build configuration list for PBXProject "FLTextView Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F6299F51AD3CDA5009CDDA3;
+			productRefGroup = 9F6299FF1AD3CDA5009CDDA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F6299FD1AD3CDA5009CDDA3 /* FLTextView Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F6299FC1AD3CDA5009CDDA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FEB17F61AD3CFAF00AB89A5 /* Images.xcassets in Resources */,
+				9FEB17F51AD3CFAF00AB89A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F6299FA1AD3CDA5009CDDA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3BAE7B1AD64C2F00EE2835 /* ViewController.swift in Sources */,
+				9FEB17FC1AD3DCFA00AB89A5 /* FLTextView.swift in Sources */,
+				9FEB17F21AD3CFAF00AB89A5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9FEB17ED1AD3CFAF00AB89A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FEB17EE1AD3CFAF00AB89A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F629A1B1AD3CDA5009CDDA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9F629A1C1AD3CDA5009CDDA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F629A1E1AD3CDA5009CDDA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "FLTextView Example/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		9F629A1F1AD3CDA5009CDDA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "FLTextView Example/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F6299F91AD3CDA5009CDDA3 /* Build configuration list for PBXProject "FLTextView Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F629A1B1AD3CDA5009CDDA3 /* Debug */,
+				9F629A1C1AD3CDA5009CDDA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F629A1D1AD3CDA5009CDDA3 /* Build configuration list for PBXNativeTarget "FLTextView Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F629A1E1AD3CDA5009CDDA3 /* Debug */,
+				9F629A1F1AD3CDA5009CDDA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F6299F61AD3CDA5009CDDA3 /* Project object */;
+}
