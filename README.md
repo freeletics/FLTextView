@@ -1,4 +1,4 @@
-# FLTextView
+![FLTextView: UITextView + Placeholder in Swift](https://raw.githubusercontent.com/freeletics/FLTextView/assets/freeletics.png)
 
 ## License
 
