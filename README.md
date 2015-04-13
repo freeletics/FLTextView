@@ -1,5 +1,7 @@
 ![FLTextView: UITextView + Placeholder in Swift](https://raw.githubusercontent.com/freeletics/FLTextView/assets/freeletics.png)
 
+[![Version](https://img.shields.io/cocoapods/v/FLTextView.svg)](https://cocoapods.org/pods/FLTextView) [![License](https://img.shields.io/cocoapods/l/FLTextView.svg)](https://github.com/freeletics/FLTextView/blob/master/LICENSE)
+
 FLTextView adds a placeholder to UITextView just like UITextField natively provides. Compared to other similar libraries we allow the ability to grow (in height or content size) the area of UITextView depending on the size of the placeholder.
 
 ## Requirements
