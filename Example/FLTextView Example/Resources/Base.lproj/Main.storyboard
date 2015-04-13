@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--FLTextView Example-->
@@ -243,8 +242,8 @@
                         <constraints>
                             <constraint firstItem="lki-aS-61a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ANQ-Dj-cHr"/>
                             <constraint firstAttribute="width" secondItem="80h-hX-ET3" secondAttribute="width" id="KWb-vs-Geg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lki-aS-61a" secondAttribute="trailing" constant="-16" id="Srw-Tp-BLA"/>
-                            <constraint firstItem="lki-aS-61a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aAK-MF-0oF"/>
+                            <constraint firstAttribute="trailing" secondItem="lki-aS-61a" secondAttribute="trailing" id="Srw-Tp-BLA"/>
+                            <constraint firstItem="lki-aS-61a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aAK-MF-0oF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -310,9 +309,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="8wE-s4-xWG" secondAttribute="trailing" constant="-16" id="8il-7d-3yg"/>
+                            <constraint firstAttribute="trailing" secondItem="8wE-s4-xWG" secondAttribute="trailing" id="8il-7d-3yg"/>
                             <constraint firstAttribute="width" secondItem="NFc-zf-TEU" secondAttribute="width" id="Nyr-Vw-xrp"/>
-                            <constraint firstItem="8wE-s4-xWG" firstAttribute="leading" secondItem="zqR-zx-hET" secondAttribute="leadingMargin" constant="-16" id="Rfg-7L-K21"/>
+                            <constraint firstItem="8wE-s4-xWG" firstAttribute="leading" secondItem="zqR-zx-hET" secondAttribute="leading" id="Rfg-7L-K21"/>
                             <constraint firstItem="8wE-s4-xWG" firstAttribute="top" secondItem="7qf-Is-huL" secondAttribute="bottom" id="n6H-25-BmH"/>
                         </constraints>
                     </view>
@@ -348,9 +347,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="J00-mE-Doa" secondAttribute="trailing" constant="-16" id="5Vr-KC-z8E"/>
+                            <constraint firstAttribute="trailing" secondItem="J00-mE-Doa" secondAttribute="trailing" id="5Vr-KC-z8E"/>
                             <constraint firstItem="J00-mE-Doa" firstAttribute="top" secondItem="UOK-KN-OCR" secondAttribute="bottom" id="DxJ-VH-L6U"/>
-                            <constraint firstItem="J00-mE-Doa" firstAttribute="leading" secondItem="UNH-P1-Njz" secondAttribute="leadingMargin" constant="-16" id="qQh-Fp-H8z"/>
+                            <constraint firstItem="J00-mE-Doa" firstAttribute="leading" secondItem="UNH-P1-Njz" secondAttribute="leading" id="qQh-Fp-H8z"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -387,8 +386,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Bq-sz-SBk" firstAttribute="leading" secondItem="2xR-Gf-bYf" secondAttribute="leadingMargin" constant="-16" id="00N-96-VFe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4Bq-sz-SBk" secondAttribute="trailing" constant="-16" id="Msq-Ez-3G0"/>
+                            <constraint firstItem="4Bq-sz-SBk" firstAttribute="leading" secondItem="2xR-Gf-bYf" secondAttribute="leading" id="00N-96-VFe"/>
+                            <constraint firstAttribute="trailing" secondItem="4Bq-sz-SBk" secondAttribute="trailing" id="Msq-Ez-3G0"/>
                             <constraint firstItem="4Bq-sz-SBk" firstAttribute="top" secondItem="d1r-vx-RTH" secondAttribute="bottom" id="kmH-Z3-PUJ"/>
                         </constraints>
                     </view>
@@ -427,8 +426,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5GY-kL-uqb" firstAttribute="leading" secondItem="VQX-HX-oY1" secondAttribute="leadingMargin" constant="-16" id="MIn-SR-cDn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5GY-kL-uqb" secondAttribute="trailing" constant="-16" id="Qxf-tw-R41"/>
+                            <constraint firstItem="5GY-kL-uqb" firstAttribute="leading" secondItem="VQX-HX-oY1" secondAttribute="leading" id="MIn-SR-cDn"/>
+                            <constraint firstAttribute="trailing" secondItem="5GY-kL-uqb" secondAttribute="trailing" id="Qxf-tw-R41"/>
                             <constraint firstItem="5GY-kL-uqb" firstAttribute="top" secondItem="XFd-gq-ij8" secondAttribute="bottom" id="WMP-aK-D0u"/>
                         </constraints>
                     </view>
@@ -461,9 +460,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9nu-5H-UVk" firstAttribute="leading" secondItem="pL9-Tf-UXT" secondAttribute="leadingMargin" constant="-16" id="38F-Fq-o5c"/>
+                            <constraint firstItem="9nu-5H-UVk" firstAttribute="leading" secondItem="pL9-Tf-UXT" secondAttribute="leading" id="38F-Fq-o5c"/>
                             <constraint firstItem="9nu-5H-UVk" firstAttribute="top" secondItem="tfz-4C-cCY" secondAttribute="bottom" id="YFH-dS-mz0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9nu-5H-UVk" secondAttribute="trailing" constant="-16" id="tEO-xo-6L0"/>
+                            <constraint firstAttribute="trailing" secondItem="9nu-5H-UVk" secondAttribute="trailing" id="tEO-xo-6L0"/>
                         </constraints>
                     </view>
                     <connections>
