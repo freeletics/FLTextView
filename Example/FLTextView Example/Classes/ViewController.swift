@@ -33,10 +33,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let placeholder = NSMutableAttributedString(string: "Lorem ipsum")
-        placeholder.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.7, alpha: 1.0), range: NSMakeRange(0, 11))
-        placeholder.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.StyleDouble.rawValue, range: NSMakeRange(0, 5))
-        placeholder.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(6, 5))
+        let placeholder = NSMutableAttributedString(string: "No excuses")
+        placeholder.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.7, alpha: 1.0), range: NSMakeRange(0, 10))
+        placeholder.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.StyleDouble.rawValue, range: NSMakeRange(3, 7))
+        placeholder.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(0, 2))
         
         textView.attributedPlaceholder = placeholder
     }
