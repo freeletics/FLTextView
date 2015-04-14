@@ -121,6 +121,14 @@ public class FLTextView: UITextView {
         setupPlaceholderView()
     }
     
+    override public convenience init() {
+        self.init(frame: CGRectZero, textContainer: nil)
+    }
+    
+    override public convenience init(frame: CGRect) {
+        self.init(frame: frame, textContainer: nil)
+    }
+    
     deinit {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.removeObserver(self)
