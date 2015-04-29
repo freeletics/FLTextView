@@ -166,7 +166,7 @@ public class FLTextView: UITextView {
     }
     
     private func showPlaceholderViewIfNeeded() {
-        if text != nil && countElements(text) > 0 {
+        if text != nil && !text.isEmpty {
             if isShowingPlaceholder {
                 placeholderView.removeFromSuperview()
                 invalidateIntrinsicContentSize()
