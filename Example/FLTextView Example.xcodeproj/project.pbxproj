@@ -123,6 +123,8 @@
 		9F6299F61AD3CDA5009CDDA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Freeletics GmbH";
 				TargetAttributes = {
