@@ -41,7 +41,7 @@ public class FLTextView: UITextView {
     /// If you want to apply the color to only a portion of the placeholder,
     /// you must create a new attributed string with the desired style information 
     /// and assign it to the attributedPlaceholder property.
-    @IBInspectable public var placeholderTextColor: UIColor {
+    @IBInspectable public var placeholderTextColor: UIColor? {
         get {
             return placeholderView.textColor
         }
@@ -91,7 +91,7 @@ public class FLTextView: UITextView {
         }
     }
     
-    override public var font: UIFont! {
+    override public var font: UIFont? {
         didSet {
             placeholderView.font = font
         }
@@ -111,7 +111,7 @@ public class FLTextView: UITextView {
     
     // MARK: - Initialization
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupPlaceholderView()
     }
