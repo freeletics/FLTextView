@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FLTextView'
-  s.version = '1.0.3'
+  s.version = '1.0.4'
   s.license = 'MIT'
   s.summary = 'UITextView + Placeholder in Swift'
   s.homepage = 'https://github.com/freeletics/FLTextView'
@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.framework = 'UIKit'
   s.requires_arc = true
+  s.platform     = :ios, '7.0'
 
   s.subspec 'Legacy' do |sp|
     sp.ios.deployment_target = '7.0'
