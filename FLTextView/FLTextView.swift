@@ -162,7 +162,7 @@ public class FLTextView: UITextView {
         showPlaceholderViewIfNeeded()
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "textDidChange:", name: UITextViewTextDidChangeNotification, object: self)
+        notificationCenter.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: UITextViewTextDidChangeNotification, object: self)
     }
     
     private func showPlaceholderViewIfNeeded() {
