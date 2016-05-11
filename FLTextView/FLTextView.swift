@@ -61,6 +61,14 @@ public class FLTextView: UITextView {
         }
     }
     
+    /// This property controls when the placeholder should hide.
+    /// Setting it to `true` will hide the placeholder right after the text view 
+    /// becomes first responder. Setting it to `false` will hide the placeholder
+    /// only when the user starts typing in the text view. 
+    
+    /// Default value is `false`
+    @IBInspectable public var hidesPlaceholderWhenEditingBegins = false
+    
     /// The styled string that is displayed when there is no other text in the text view.
     public var attributedPlaceholder: NSAttributedString? {
         get {
@@ -132,6 +140,10 @@ public class FLTextView: UITextView {
         showPlaceholderViewIfNeeded()
     }
     
+    func textViewDidBeginEditing(notification: NSNotification) {
+        showPlaceholderViewIfNeeded()
+    }
+    
     // MARK: - UIView
     
     public override func layoutSubviews() {
@@ -163,22 +175,22 @@ public class FLTextView: UITextView {
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: UITextViewTextDidChangeNotification, object: self)
+        notificationCenter.addObserver(self, selector: #selector(textViewDidBeginEditing(_:)), name: UITextViewTextDidBeginEditingNotification, object: self)
     }
     
     private func showPlaceholderViewIfNeeded() {
-        if text != nil && !text.isEmpty {
+        if hidesPlaceholderWhenEditingBegins || (text != nil && !text.isEmpty && !hidesPlaceholderWhenEditingBegins) {
             if isShowingPlaceholder {
                 placeholderView.removeFromSuperview()
-                invalidateIntrinsicContentSize()
-                setContentOffset(CGPointZero, animated: false)
             }
         } else {
             if !isShowingPlaceholder {
                 addSubview(placeholderView)
-                invalidateIntrinsicContentSize()
-                setContentOffset(CGPointZero, animated: false)
             }
         }
+        
+        invalidateIntrinsicContentSize()
+        setContentOffset(CGPointZero, animated: false)
     }
     
     private func resizePlaceholderView() {
