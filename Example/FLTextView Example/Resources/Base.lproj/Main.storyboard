@@ -540,37 +540,45 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djH-rW-mUg" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nU-Um-kgw" customClass="FLTextView">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="4Zt-QL-FCJ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="4Zt-QL-FCJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder">
-                                                        <mutableString key="value">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</mutableString>
-                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placeholder will disappear when you'll tap here"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hidesPlaceholderWhenBlablabla" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hidesPlaceholderWhenEditingBegins" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oGj-Ed-fVv" customClass="FLTextView">
+                                                <rect key="frame" x="0.0" y="100" width="600" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="8ch-L4-BHw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hidesPlaceholderWhenEditingBegins" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placeholder will disappear when you'll start typing"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="8nU-Um-kgw" secondAttribute="bottom" id="FSc-7J-FLl"/>
-                                            <constraint firstAttribute="bottom" secondItem="8nU-Um-kgw" secondAttribute="bottom" constant="520" id="LeQ-eo-eyP"/>
+                                            <constraint firstItem="oGj-Ed-fVv" firstAttribute="top" secondItem="8nU-Um-kgw" secondAttribute="bottom" constant="50" id="N4w-ph-0j8"/>
+                                            <constraint firstAttribute="trailing" secondItem="oGj-Ed-fVv" secondAttribute="trailing" id="Roj-M3-WAA"/>
                                             <constraint firstItem="8nU-Um-kgw" firstAttribute="top" secondItem="djH-rW-mUg" secondAttribute="top" id="Vqh-d0-oXG"/>
+                                            <constraint firstAttribute="height" constant="300" id="c0I-Es-3sH"/>
                                             <constraint firstItem="8nU-Um-kgw" firstAttribute="leading" secondItem="djH-rW-mUg" secondAttribute="leading" id="cRW-ue-8Gx"/>
                                             <constraint firstAttribute="trailing" secondItem="8nU-Um-kgw" secondAttribute="trailing" id="dZl-Vq-ZTF"/>
+                                            <constraint firstItem="oGj-Ed-fVv" firstAttribute="leading" secondItem="djH-rW-mUg" secondAttribute="leading" id="yQK-NP-A7c"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="LeQ-eo-eyP"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
