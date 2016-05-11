@@ -31,7 +31,7 @@ public class FLTextView: UITextView {
     
     // MARK: - Private Properties
     
-    private let placeholderView = UITextView(frame: CGRectZero)
+    private let placeholderView = UITextView(frame: CGRect.zero)
     
     // MARK: - Placeholder Properties
     
@@ -141,21 +141,19 @@ public class FLTextView: UITextView {
     }
     
     func textViewDidBeginEditing(notification: NSNotification) {
-        if hidesPlaceholderWhenEditingBegins {
-            if isShowingPlaceholder {
-                placeholderView.removeFromSuperview()
-                invalidateIntrinsicContentSize()
-                setContentOffset(CGPointZero, animated: false)
-            }
+        if hidesPlaceholderWhenEditingBegins && isShowingPlaceholder {
+            placeholderView.removeFromSuperview()
+            invalidateIntrinsicContentSize()
+            setContentOffset(CGPoint.zero, animated: false)
         }
     }
     
     func textViewDidEndEditing(notification: NSNotification) {
         if hidesPlaceholderWhenEditingBegins {
             if !isShowingPlaceholder && (text == nil || text.isEmpty) {
-                self.addSubview(placeholderView)
+                addSubview(placeholderView)
                 invalidateIntrinsicContentSize()
-                setContentOffset(CGPointZero, animated: false)
+                setContentOffset(CGPoint.zero, animated: false)
             }
         }
     }
@@ -201,13 +199,13 @@ public class FLTextView: UITextView {
                 if isShowingPlaceholder {
                     placeholderView.removeFromSuperview()
                     invalidateIntrinsicContentSize()
-                    setContentOffset(CGPointZero, animated: false)
+                    setContentOffset(CGPoint.zero, animated: false)
                 }
             } else {
                 if !isShowingPlaceholder {
                     addSubview(placeholderView)
                     invalidateIntrinsicContentSize()
-                    setContentOffset(CGPointZero, animated: false)
+                    setContentOffset(CGPoint.zero, animated: false)
                 }
             }
         }
