@@ -31,7 +31,7 @@ public class FLTextView: UITextView {
     
     // MARK: - Private Properties
     
-    private let placeholderView = UITextView(frame: CGRectZero)
+    private let placeholderView = UITextView(frame: CGRect.zero)
     
     // MARK: - Placeholder Properties
     
@@ -67,7 +67,7 @@ public class FLTextView: UITextView {
     /// only when the user starts typing in the text view. 
     
     /// Default value is `false`
-    @IBInspectable public var hidesPlaceholderWhenEditingBegins = false
+    @IBInspectable public var hidesPlaceholderWhenEditingBegins: Bool = false
     
     /// The styled string that is displayed when there is no other text in the text view.
     public var attributedPlaceholder: NSAttributedString? {
@@ -141,7 +141,21 @@ public class FLTextView: UITextView {
     }
     
     func textViewDidBeginEditing(notification: NSNotification) {
-        showPlaceholderViewIfNeeded()
+        if hidesPlaceholderWhenEditingBegins && isShowingPlaceholder {
+            placeholderView.removeFromSuperview()
+            invalidateIntrinsicContentSize()
+            setContentOffset(CGPoint.zero, animated: false)
+        }
+    }
+    
+    func textViewDidEndEditing(notification: NSNotification) {
+        if hidesPlaceholderWhenEditingBegins {
+            if !isShowingPlaceholder && (text == nil || text.isEmpty) {
+                addSubview(placeholderView)
+                invalidateIntrinsicContentSize()
+                setContentOffset(CGPoint.zero, animated: false)
+            }
+        }
     }
     
     // MARK: - UIView
@@ -176,21 +190,25 @@ public class FLTextView: UITextView {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: UITextViewTextDidChangeNotification, object: self)
         notificationCenter.addObserver(self, selector: #selector(textViewDidBeginEditing(_:)), name: UITextViewTextDidBeginEditingNotification, object: self)
+        notificationCenter.addObserver(self, selector: #selector(textViewDidEndEditing(_:)), name: UITextViewTextDidEndEditingNotification, object: self)
     }
     
     private func showPlaceholderViewIfNeeded() {
-        if hidesPlaceholderWhenEditingBegins || (text != nil && !text.isEmpty && !hidesPlaceholderWhenEditingBegins) {
-            if isShowingPlaceholder {
-                placeholderView.removeFromSuperview()
-            }
-        } else {
-            if !isShowingPlaceholder {
-                addSubview(placeholderView)
+        if !hidesPlaceholderWhenEditingBegins {
+            if text != nil && !text.isEmpty {
+                if isShowingPlaceholder {
+                    placeholderView.removeFromSuperview()
+                    invalidateIntrinsicContentSize()
+                    setContentOffset(CGPoint.zero, animated: false)
+                }
+            } else {
+                if !isShowingPlaceholder {
+                    addSubview(placeholderView)
+                    invalidateIntrinsicContentSize()
+                    setContentOffset(CGPoint.zero, animated: false)
+                }
             }
         }
-        
-        invalidateIntrinsicContentSize()
-        setContentOffset(CGPointZero, animated: false)
     }
     
     private func resizePlaceholderView() {
