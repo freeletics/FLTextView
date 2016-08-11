@@ -27,7 +27,7 @@
 import UIKit
 
 @objc(FLTextView)
-public class FLTextView: UITextView {
+open class FLTextView: UITextView {
     
     // MARK: - Private Properties
     
@@ -87,31 +87,31 @@ public class FLTextView: UITextView {
     
     // MARK: - Observed Properties
     
-    override public var text: String! {
+    override open var text: String! {
         didSet {
             showPlaceholderViewIfNeeded()
         }
     }
     
-    override public var attributedText: NSAttributedString! {
+    override open var attributedText: NSAttributedString! {
         didSet {
             showPlaceholderViewIfNeeded()
         }
     }
     
-    override public var font: UIFont? {
+    override open var font: UIFont? {
         didSet {
             placeholderView.font = font
         }
     }
     
-    override public var textAlignment: NSTextAlignment {
+    override open var textAlignment: NSTextAlignment {
         didSet {
             placeholderView.textAlignment = textAlignment
         }
     }
     
-    override public var textContainerInset: UIEdgeInsets {
+    override open var textContainerInset: UIEdgeInsets {
         didSet {
             placeholderView.textContainerInset = textContainerInset
         }
@@ -130,7 +130,7 @@ public class FLTextView: UITextView {
     }
     
     deinit {
-        let notificationCenter = NSNotificationCenter.defaultCenter()
+        let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
     }
     
@@ -160,37 +160,37 @@ public class FLTextView: UITextView {
     
     // MARK: - UIView
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         resizePlaceholderView()
     }
     
-    public override func intrinsicContentSize() -> CGSize {
+    open override var intrinsicContentSize: CGSize {
         if isShowingPlaceholder {
             return placeholderSize()
         }
-        return super.intrinsicContentSize()
+        return super.intrinsicContentSize
     }
     
     // MARK: - Placeholder
     
     private func setupPlaceholderView() {
-        placeholderView.opaque = false
-        placeholderView.backgroundColor = UIColor.clearColor()
+        placeholderView.isOpaque = false
+        placeholderView.backgroundColor = UIColor.clear
         placeholderView.textColor = UIColor(white: 0.7, alpha: 1.0)
         
-        placeholderView.editable = false
-        placeholderView.scrollEnabled = true
-        placeholderView.userInteractionEnabled = false
+        placeholderView.isEditable = false
+        placeholderView.isScrollEnabled = true
+        placeholderView.isUserInteractionEnabled = false
         placeholderView.isAccessibilityElement = false
-        placeholderView.selectable = false
+        placeholderView.isSelectable = false
         
         showPlaceholderViewIfNeeded()
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: UITextViewTextDidChangeNotification, object: self)
-        notificationCenter.addObserver(self, selector: #selector(textViewDidBeginEditing(_:)), name: UITextViewTextDidBeginEditingNotification, object: self)
-        notificationCenter.addObserver(self, selector: #selector(textViewDidEndEditing(_:)), name: UITextViewTextDidEndEditingNotification, object: self)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(textDidChange(notification:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        notificationCenter.addObserver(self, selector: #selector(textViewDidBeginEditing(notification:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: self)
+        notificationCenter.addObserver(self, selector: #selector(textViewDidEndEditing(notification:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: self)
     }
     
     private func showPlaceholderViewIfNeeded() {
@@ -214,22 +214,22 @@ public class FLTextView: UITextView {
     private func resizePlaceholderView() {
         if isShowingPlaceholder {
             let size = placeholderSize()
-            let frame = CGRectMake(0.0, 0.0, size.width, size.height)
+            let frame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
             
-            if !CGRectEqualToRect(placeholderView.frame, frame) {
+            if !placeholderView.frame.equalTo(frame) {
                 placeholderView.frame = frame
                 invalidateIntrinsicContentSize()
             }
             
             contentInset = UIEdgeInsetsMake(0.0, 0.0, size.height - contentSize.height, 0.0)
         } else {
-            contentInset = UIEdgeInsetsZero
+            contentInset = UIEdgeInsets.zero
         }
     }
     
     private func placeholderSize() -> CGSize {
         var maxSize = self.bounds.size
-        maxSize.height = CGFloat.max
+        maxSize.height = CGFloat.greatestFiniteMagnitude
         return placeholderView.sizeThatFits(maxSize)
     }
 
