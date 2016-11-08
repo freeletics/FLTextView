@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'FLTextView'
-  s.version = ‘1.0.6’
+  s.version = '1.0.6'
   s.license = 'MIT'
   s.summary = 'UITextView + Placeholder in Swift'
   s.homepage = 'https://github.com/freeletics/FLTextView'
