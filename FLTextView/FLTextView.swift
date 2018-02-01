@@ -27,7 +27,7 @@
 import UIKit
 
 @objc(FLTextView)
-open class FLTextView: UITextView {
+public class FLTextView: UITextView {
     
     // MARK: - Private Properties
     
@@ -41,9 +41,9 @@ open class FLTextView: UITextView {
     /// If you want to apply the color to only a portion of the placeholder,
     /// you must create a new attributed string with the desired style information 
     /// and assign it to the attributedPlaceholder property.
-    @IBInspectable public var placeholderTextColor: UIColor? {
+    @IBInspectable public var placeholderTextColor: UIColor {
         get {
-            return placeholderView.textColor
+            return placeholderView.textColor!
         }
         set {
             placeholderView.textColor = newValue
@@ -60,14 +60,6 @@ open class FLTextView: UITextView {
             setNeedsLayout()
         }
     }
-    
-    /// This property controls when the placeholder should hide.
-    /// Setting it to `true` will hide the placeholder right after the text view 
-    /// becomes first responder. Setting it to `false` will hide the placeholder
-    /// only when the user starts typing in the text view. 
-    
-    /// Default value is `false`
-    @IBInspectable public var hidesPlaceholderWhenEditingBegins: Bool = false
     
     /// The styled string that is displayed when there is no other text in the text view.
     public var attributedPlaceholder: NSAttributedString? {
@@ -87,31 +79,31 @@ open class FLTextView: UITextView {
     
     // MARK: - Observed Properties
     
-    override open var text: String! {
+    override public var text: String! {
         didSet {
             showPlaceholderViewIfNeeded()
         }
     }
     
-    override open var attributedText: NSAttributedString! {
+    override public var attributedText: NSAttributedString! {
         didSet {
             showPlaceholderViewIfNeeded()
         }
     }
     
-    override open var font: UIFont? {
+    override public var font: UIFont! {
         didSet {
             placeholderView.font = font
         }
     }
     
-    override open var textAlignment: NSTextAlignment {
+    override public var textAlignment: NSTextAlignment {
         didSet {
             placeholderView.textAlignment = textAlignment
         }
     }
     
-    override open var textContainerInset: UIEdgeInsets {
+    override public var textContainerInset: UIEdgeInsets {
         didSet {
             placeholderView.textContainerInset = textContainerInset
         }
@@ -140,32 +132,14 @@ open class FLTextView: UITextView {
         showPlaceholderViewIfNeeded()
     }
     
-    func textViewDidBeginEditing(notification: NSNotification) {
-        if hidesPlaceholderWhenEditingBegins && isShowingPlaceholder {
-            placeholderView.removeFromSuperview()
-            invalidateIntrinsicContentSize()
-            setContentOffset(CGPoint.zero, animated: false)
-        }
-    }
-    
-    func textViewDidEndEditing(notification: NSNotification) {
-        if hidesPlaceholderWhenEditingBegins {
-            if !isShowingPlaceholder && (text == nil || text.isEmpty) {
-                addSubview(placeholderView)
-                invalidateIntrinsicContentSize()
-                setContentOffset(CGPoint.zero, animated: false)
-            }
-        }
-    }
-    
     // MARK: - UIView
     
-    open override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         resizePlaceholderView()
     }
     
-    open override var intrinsicContentSize: CGSize {
+    public func intrinsicContentSize() -> CGSize {
         if isShowingPlaceholder {
             return placeholderSize()
         }
@@ -188,25 +162,21 @@ open class FLTextView: UITextView {
         showPlaceholderViewIfNeeded()
         
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(textDidChange(notification:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
-        notificationCenter.addObserver(self, selector: #selector(textViewDidBeginEditing(notification:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: self)
-        notificationCenter.addObserver(self, selector: #selector(textViewDidEndEditing(notification:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: self)
+        notificationCenter.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
     }
     
     private func showPlaceholderViewIfNeeded() {
-        if !hidesPlaceholderWhenEditingBegins {
-            if text != nil && !text.isEmpty {
-                if isShowingPlaceholder {
-                    placeholderView.removeFromSuperview()
-                    invalidateIntrinsicContentSize()
-                    setContentOffset(CGPoint.zero, animated: false)
-                }
-            } else {
-                if !isShowingPlaceholder {
-                    addSubview(placeholderView)
-                    invalidateIntrinsicContentSize()
-                    setContentOffset(CGPoint.zero, animated: false)
-                }
+        if text != nil && !text.isEmpty {
+            if isShowingPlaceholder {
+                placeholderView.removeFromSuperview()
+                invalidateIntrinsicContentSize()
+                setContentOffset(CGPoint.zero, animated: false)
+            }
+        } else {
+            if !isShowingPlaceholder {
+                addSubview(placeholderView)
+                invalidateIntrinsicContentSize()
+                setContentOffset(CGPoint.zero, animated: false)
             }
         }
     }
@@ -214,7 +184,8 @@ open class FLTextView: UITextView {
     private func resizePlaceholderView() {
         if isShowingPlaceholder {
             let size = placeholderSize()
-            let frame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+            
+            let frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             
             if !placeholderView.frame.equalTo(frame) {
                 placeholderView.frame = frame
